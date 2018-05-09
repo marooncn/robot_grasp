@@ -4,7 +4,7 @@ robot grasp task for JCAR competition held by Tsinghua Univ* and Siemes. The sou
 This package contains grasp model.
 
 ## Run the demo by yourself
-Tested on Ubuntu 16.04 (64 bits) and ROS version is Indigo. <br>
+Tested on Ubuntu 16.04 (64 bits) and ROS version is Kinetic. <br>
 Dependence: [kinova-ros](https://github.com/Kinovarobotics/kinova-ros) <br>
 0> Compile
 ~~~
