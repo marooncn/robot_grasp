@@ -1,7 +1,7 @@
 # robot_grasp
 robot grasp task for JCAR competition held by Tsinghua Univ* and Siemes. The source will be open after competition.
 ## Introduction
-    This package contains grasp model.
+This package contains grasp model.
 
 ## Run the demo by yourself
 Tested on Ubuntu 16.04 (64 bits) and ROS version is Indigo. <br>
