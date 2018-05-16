@@ -40,7 +40,7 @@ The robot model is controlled by PID. If the model is unstable, then you can cha
 ~~~
 rqt
 ~~~
-Then choose Plugins -> Configuration -> Dynamic Reconfigure -> j2s7s300
+Then choose Plugins -> Configuration -> Dynamic Reconfigure -> j2s7s300  <br>
 4> Kinect Information
 ~~~
 rosrun rviz rviz
