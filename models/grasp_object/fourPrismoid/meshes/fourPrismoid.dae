@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.79.0 commit date:2018-03-22, commit time:14:10, hash:f4dc9f9d68b</authoring_tool>
+    </contributor>
+    <created>2018-05-08T16:59:37</created>
+    <modified>2018-05-08T16:59:37</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_effects/>
+  <library_geometries>
+    <geometry id="fourPrismoid-mesh" name="fourPrismoid">
+      <mesh>
+        <source id="fourPrismoid-mesh-positions">
+          <float_array id="fourPrismoid-mesh-positions-array" count="24">1.5 2.035714 1.5 1.5 2.035714 -1.5 -1.5 2.035714 1.5 -1.5 2.035714 -1.5 2.5 -1.464286 -2.5 2.5 -1.464286 2.5 -2.5 -1.464286 -2.5 -2.5 -1.464286 2.5</float_array>
+          <technique_common>
+            <accessor source="#fourPrismoid-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="fourPrismoid-mesh-normals">
+          <float_array id="fourPrismoid-mesh-normals-array" count="18">0 1 0 0 -1 0 0 0.2747211 0.961524 -0.961524 0.2747211 0 0.961524 0.2747211 0 0 0.2747211 -0.961524</float_array>
+          <technique_common>
+            <accessor source="#fourPrismoid-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="fourPrismoid-mesh-vertices">
+          <input semantic="POSITION" source="#fourPrismoid-mesh-positions"/>
+        </vertices>
+        <triangles count="12">
+          <input semantic="VERTEX" source="#fourPrismoid-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#fourPrismoid-mesh-normals" offset="1"/>
+          <p>0 0 1 0 2 0 2 0 1 0 3 0 4 1 5 1 6 1 6 1 5 1 7 1 2 2 7 2 0 2 0 2 7 2 5 2 3 3 6 3 2 3 2 3 6 3 7 3 0 4 5 4 1 4 1 4 5 4 4 4 1 5 4 5 3 5 3 5 4 5 6 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="fourPrismoid" name="fourPrismoid" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 -1.62921e-7 -1 0 0 1 -1.62921e-7 0 0 0 0 1</matrix>
+        <instance_geometry url="#fourPrismoid-mesh" name="fourPrismoid"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

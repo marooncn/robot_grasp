@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.79.0 commit date:2018-03-22, commit time:14:10, hash:f4dc9f9d68b</authoring_tool>
+    </contributor>
+    <created>2018-05-08T17:02:42</created>
+    <modified>2018-05-08T17:02:42</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_effects/>
+  <library_geometries>
+    <geometry id="sixPrism-mesh" name="sixPrism">
+      <mesh>
+        <source id="sixPrism-mesh-positions">
+          <float_array id="sixPrism-mesh-positions-array" count="36">1.25 3.75 0 1.25 -3.75 0 0.6249999 3.75 -1.082532 0.6249999 -3.75 -1.082532 0.6249999 3.75 1.082532 0.6249999 -3.75 1.082532 -0.6250001 3.75 1.082532 -0.6250001 -3.75 1.082532 -1.25 3.75 0 -1.25 -3.75 0 -0.6250001 3.75 -1.082532 -0.6250001 -3.75 -1.082532</float_array>
+          <technique_common>
+            <accessor source="#sixPrism-mesh-positions-array" count="12" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="sixPrism-mesh-normals">
+          <float_array id="sixPrism-mesh-normals-array" count="24">0.8660255 0 -0.5 0.8660255 0 0.5 0 0 1 -0.8660255 0 0.4999998 -0.8660255 0 -0.4999998 0 0 -1 0 -1 0 0 1 0</float_array>
+          <technique_common>
+            <accessor source="#sixPrism-mesh-normals-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="sixPrism-mesh-vertices">
+          <input semantic="POSITION" source="#sixPrism-mesh-positions"/>
+        </vertices>
+        <triangles count="20">
+          <input semantic="VERTEX" source="#sixPrism-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#sixPrism-mesh-normals" offset="1"/>
+          <p>0 0 1 0 2 0 2 0 1 0 3 0 4 1 5 1 0 1 0 1 5 1 1 1 6 2 7 2 4 2 4 2 7 2 5 2 8 3 9 3 6 3 6 3 9 3 7 3 10 4 11 4 8 4 8 4 11 4 9 4 2 5 3 5 10 5 10 5 3 5 11 5 5 6 7 6 1 6 1 6 7 6 9 6 1 6 9 6 3 6 3 6 9 6 11 6 0 7 2 7 4 7 4 7 2 7 10 7 4 7 10 7 6 7 6 7 10 7 8 7</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="sixPrism" name="sixPrism" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 -1.62921e-7 -1 0 0 1 -1.62921e-7 0 0 0 0 1</matrix>
+        <instance_geometry url="#sixPrism-mesh" name="sixPrism"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

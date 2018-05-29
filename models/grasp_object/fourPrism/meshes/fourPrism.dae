@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.79.0 commit date:2018-03-22, commit time:14:10, hash:f4dc9f9d68b</authoring_tool>
+    </contributor>
+    <created>2018-05-08T16:58:51</created>
+    <modified>2018-05-08T16:58:51</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_effects/>
+  <library_geometries>
+    <geometry id="fourPrism-mesh" name="fourPrism">
+      <mesh>
+        <source id="fourPrism-mesh-positions">
+          <float_array id="fourPrism-mesh-positions-array" count="24">1.25 3.75 1.25 1.25 -3.75 1.25 1.25 3.75 -1.25 1.25 -3.75 -1.25 -1.25 3.75 1.25 -1.25 -3.75 1.25 -1.25 3.75 -1.25 -1.25 -3.75 -1.25</float_array>
+          <technique_common>
+            <accessor source="#fourPrism-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="fourPrism-mesh-normals">
+          <float_array id="fourPrism-mesh-normals-array" count="18">1 0 0 0 0 1 -1 0 0 0 0 -1 0 -1 0 0 1 0</float_array>
+          <technique_common>
+            <accessor source="#fourPrism-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="fourPrism-mesh-vertices">
+          <input semantic="POSITION" source="#fourPrism-mesh-positions"/>
+        </vertices>
+        <triangles count="12">
+          <input semantic="VERTEX" source="#fourPrism-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#fourPrism-mesh-normals" offset="1"/>
+          <p>0 0 1 0 2 0 2 0 1 0 3 0 4 1 5 1 0 1 0 1 5 1 1 1 6 2 7 2 4 2 4 2 7 2 5 2 2 3 3 3 6 3 6 3 3 3 7 3 5 4 7 4 1 4 1 4 7 4 3 4 6 5 4 5 2 5 2 5 4 5 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="fourPrism" name="fourPrism" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 -1.62921e-7 -1 0 0 1 -1.62921e-7 0 0 0 0 1</matrix>
+        <instance_geometry url="#fourPrism-mesh" name="fourPrism"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

@@ -1,0 +1,47 @@
+<launch>
+
+  <!-- these are the arguments you can pass this launch file, for example paused:=true -->  
+  <arg name="kinova_robotType" default="j2s7s300"/>
+  <arg name="kinova_robotName" default="$(arg kinova_robotType)"/>
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <arg name="use_trajectory_controller" default="false"/>
+  <arg name="is7dof" default="true"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find kinova_gazebo)/worlds/jaco.world"/>
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description"
+    command="$(find xacro)/xacro --inorder '$(find robot_grasp)/models/kinova/$(arg kinova_robotType)_withBase.xacro'" />
+
+  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -model robot_on_table -param robot_description"/> 
+
+  <node name="spawn_kinect" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/kinect/model.sdf -sdf -model kinect -x 0.1 -y -0.55 -z 0.86" respawn="false" output="screen" />   
+
+  <include file="$(find kinova_control)/launch/kinova_control.launch">
+    <arg name="kinova_robotName" value="$(arg kinova_robotName)"/>
+    <arg name="kinova_robotType" value="$(arg kinova_robotType)"/>
+    <arg name="use_trajectory_controller" value="$(arg use_trajectory_controller)"/>
+    <arg name="is7dof" value="$(arg is7dof)"/>
+  </include> 
+
+  <!-- rqt launch file 
+  <include file="$(find kinova_control)/launch/kinova_rqt.launch">
+    <arg name="kinova_robotType" value="$(arg kinova_robotName)"/>
+  </include>  -->
+  
+
+</launch>
+
