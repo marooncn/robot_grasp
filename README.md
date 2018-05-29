@@ -1,5 +1,5 @@
 # robot_grasp
-robot grasp model for JCAR competition.
+robot grasp model for JCAR competition. 3D model files are built by Jianbo Zhang. 
 ## Introduction
 This package contains grasp model.
 
