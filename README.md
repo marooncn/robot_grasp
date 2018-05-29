@@ -1,5 +1,5 @@
 # robot_grasp
-robot grasp task for JCAR competition held by Tsinghua Univ* and Siemes. The source will be open after competition.
+robot grasp model for JCAR competition.
 ## Introduction
 This package contains grasp model.
 
