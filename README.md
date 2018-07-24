@@ -21,9 +21,9 @@ catkin_make
 1> Load the grasp model  
 ~~~
 source ~/catkin_ws/devel/setup.bash
-rosrun robot_grasp load_model.launch
+roslaunch robot_grasp load_model.launch
 ~~~
-Then snap kinect to kinect_support with face down.
+Then snap kinect to kinect_support with face down. <br>
 2> Load the grasp objects <br>
 2.1 > Insert the grasp object one by one
 ~~~
