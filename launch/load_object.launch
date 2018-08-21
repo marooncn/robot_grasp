@@ -1,16 +1,31 @@
-<launch>
+<!--<launch>
 
-  <!-- Run a python script to the send a service call to gazebo_ros to spawn a grasp objects --> 
   <node name="spawn_cube" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/cube/cube.sdf -sdf -model cubic  -x 0.178535 -y -0.295781 -z 0.733392" respawn="false" output="screen" />  
   <node name="spawn_cylinder" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/cylinder/cylinder.sdf -sdf -model cylinder  -x 0.240976 -y -0.229076 -z 0.745890" respawn="false" output="screen" />  
   <node name="spawn_cone" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/cone/cone.sdf -sdf -model cone  -x 0.169104 -y -0.153575 -z 0.727391" respawn="false" output="screen" />   
   <node name="spawn_fourPrism" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/fourPrism/fourPrism.sdf -sdf -model fourPrism  -x 0.177017 -y -0.224871 -z 0.745890" respawn="false" output="screen" />   
   <node name="spawn_fourPrismoid" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/fourPrismoid/fourPrismoid.sdf -sdf -model fourPrismoid  -x 0.353719 -y -0.301126 -z 0.723033" respawn="false" output="screen" />  
-   <node name="spawn_fourPyramid" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/fourPyramid/fourPyramid.sdf -sdf -model fourPyramid -x 0.359985 -y -0.157306 -z 0.726741" respawn="false" output="screen" />  
+  <node name="spawn_fourPyramid" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/fourPyramid/fourPyramid.sdf -sdf -model fourPyramid -x 0.359985 -y -0.157306 -z 0.726741" respawn="false" output="screen" />
   <node name="spawn_halfSphere" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/halfSphere/halfSphere.sdf -sdf -model halfSphere  -x 0.295288 -y -0.197003 -z 0.717761" respawn="false" output="screen" /> 
   <node name="spawn_ShortCylinder" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/ShortCylinder/ShortCylinder.sdf -sdf -model ShortCylinder -x 0.267953 -y -0.299857 -z 0.733389" respawn="false" output="screen" /> 
   <node name="spawn_sixPrism" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/sixPrism/sixPrism.sdf -sdf -model sixPrism  -x 0.254862 -y -0.156849 -z 0.745891" respawn="false" output="screen" /> 
   <node name="spawn_threePyramid" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/threePyramid/threePyramid.sdf -sdf -model threePyramid -x 0.361079  -y -0.234127 -z 0.727304" respawn="false" output="screen" /> 
 
+</launch>-->
+
+<launch>
+
+  <!-- Run a python script to the send a service call to gazebo_ros to spawn a grasp objects -->
+  <node name="spawn_cube" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/cube/cube.sdf -sdf -model cube  -x 0.259010 -y -0.265880 -z 0.733392" respawn="false" output="screen" />
+  <node name="spawn_cylinder" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/cylinder/cylinder.sdf -sdf -model cylinder  -x 0.255353 -y -0.089664 -z 0.745890" respawn="false" output="screen" />
+  <node name="spawn_cone" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/cone/cone.sdf -sdf -model cone  -x 0.141628 -y -0.084016 -z 0.727391" respawn="false" output="screen" />
+  <node name="spawn_fourPrism" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/fourPrism/fourPrism.sdf -sdf -model fourPrism  -x 0.160335 -y -0.260859 -z 0.741443" respawn="false" output="screen" />
+  <node name="spawn_fourPrismoid" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/fourPrismoid/fourPrismoid.sdf -sdf -model fourPrismoid  -x 0.346873 -y -0.248283 -z 0.721374" respawn="false" output="screen" />
+  <node name="spawn_fourPyramid" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/fourPyramid/fourPyramid.sdf -sdf -model fourPyramid -x 0.354853 -y -0.092852 -z 0.725085" respawn="false" output="screen" />
+  <node name="spawn_sixPrism" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/sixPrism/sixPrism.sdf -sdf -model sixPrism  -x 0.418627 -y -0.182299 -z 0.744235" respawn="false" output="screen" />
+  <node name="spawn_threePyramid" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/threePyramid/threePyramid.sdf -sdf -model threePyramid -x 0.245622  -y -0.161912 -z 0.722869" respawn="false" output="screen" />
+  <node name="spawn_threePrism" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/threePrism/threePrism.sdf -sdf -model threePrism -x 0.332906  -y -0.176545 -z 0.731734" respawn="false" output="screen" />
+  <node name="spawn_sphere" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/grasp_object/Sphere/sphere.sdf -sdf -model sphere -x 0.149169  -y -0.170775 -z 0.728905" respawn="false" output="screen" />
 </launch>
+
 
