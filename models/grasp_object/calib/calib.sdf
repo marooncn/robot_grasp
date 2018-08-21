@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <sdf version='1.4'>
-  <model name="threePrism">
-    <static>false</static>
+  <model name="calib">
+    <static>true</static>
     <link name="link">
       <pose>0 0 0 0 0 0</pose>
       <inertial>
@@ -14,10 +14,9 @@
       </inertial>
       <collision name="collision">
         <geometry>
-          <mesh>
-  	        <scale>0.001 0.001 0.001</scale>
-            <uri>model://threePrism/meshes/threePrism.dae</uri>
-          </mesh>
+          <box>
+              <size>0.24 0.18 0.01</size>
+          </box>
         </geometry>
         <surface>
           <contact>
@@ -30,15 +29,15 @@
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh>
-  	        <scale>0.001 0.001 0.001</scale>
-            <uri>model://threePrism/meshes/threePrism.dae</uri>
-          </mesh>
+          <box>
+              <size>0.24 0.18 0.01</size>
+          </box>
         </geometry>
         <material>
           <script>
-            <name>Gazebo/WoodTile</name>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>calib/Diffuse</name>
+            <uri>model://calib/materials/scripts</uri>
+            <uri>model://calib/materials/textures</uri>
           </script>
           <!--ambient>1 0 0 1</ambient>
           <diffuse>1 0 0 1</diffuse-->

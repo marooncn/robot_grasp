@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xacro="http://ros.org/wiki/xacro">
+	<xacro:include filename="$(find robot_grasp)/models/table/table_properties.xacro" />
+	<gazebo reference="table_base2">
+		<material>Gazebo/FlatBlack</material>
+	</gazebo>
+	<gazebo reference="table_top2">
+		<material>Gazebo/White</material>
+	</gazebo>
+	
+	<link name="table_base2">
+		<inertial>
+			<origin xyz="0.018511509179121 0.23251932391586 1.175991980646075" rpy="0 0 0" />
+			<mass value="1265032.07764878" />
+			<inertia ixx="169157.982834144" ixy="-162908.934773947E-14" ixz="-974479.440236252E-15" iyy="323322.704330012" iyz="-184123.364573924E-14" izz="259218.197995528" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="$(find robot_grasp)/models/table/meshes/table_base.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="0.192156862745098 0.203921568627451 0.203921568627451 1" />
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="$(find robot_grasp)/models/table/meshes/table_base.STL" />
+			</geometry>
+		</collision>
+	</link>
+	
+	<link name="table_top2">
+		<inertial>
+			<origin xyz="2.18575157973078E-16 0.0165 -1.11022302462516E-16" rpy="0 0 0" />
+			<mass value="2772000" />
+			<inertia ixx="148091.559" ixy="-470197.740328915E-35" ixz="133744.867033177E-16" iyy="402517.5" iyz="0" izz="254929.059" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="$(find robot_grasp)/models/table/meshes/table_top.STL" />
+			</geometry>
+			<material name="">
+				<color rgba="1 1 1 1" />
+			</material>
+		</visual>
+		<visual>
+			<origin xyz="0 ${t_thickness+rim_height/2} ${-t_height/2+rim_thickness/2}" rpy="0 0 0" />
+			<geometry>
+				<box size="${t_width} ${rim_height} ${rim_thickness}"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.8 0.8 1 1" />
+			</material>
+		</visual>
+		<visual>
+			<origin xyz="${t_width/2-rim_thickness/2} ${t_thickness+rim_height/2} 0" rpy="0 0 0" />
+			<geometry>
+				<box size="${rim_thickness} ${rim_height} ${t_height}"/>
+			</geometry>
+			<material name="">
+				<color rgba="0.8 0.8 1 1" />
+			</material>
+		</visual>
+
+		<collision>
+			<origin xyz="0 ${t_thickness+rim_height/2} ${-t_height/2+rim_thickness/2}" rpy="0 0 0" />
+			<geometry>
+				<box size="${t_width} ${rim_height} ${rim_thickness}"/>
+			</geometry>
+		</collision>
+		<collision>
+			<origin xyz="${t_width/2-rim_thickness/2} ${t_thickness+rim_height/2} 0" rpy="0 0 0" />
+			<geometry>
+				<box size="${rim_thickness} ${rim_height} ${t_height}"/>
+			</geometry>
+		</collision> 
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="$(find robot_grasp)/models/table/meshes/table_top.STL" />
+			</geometry>
+		</collision>
+	</link>
+<!-- Added   -->
+
+	<joint name="j12" type="fixed">
+		<origin xyz="0.0185115091791201 -0.175991980646074 0.397575968372377" rpy="1.5707963267949 0 0" />
+		<parent link="table_base2" />
+		<child link="table_top2" />
+		<axis xyz="0 0 0" />
+	</joint>
+
+
+	<!-- Add some handy co-ordinate frames -->
+
+	<link name="tabletop_ontop2"/>
+	<joint name="table_tabletop_totop2" type="fixed">
+		<origin xyz="0.0 0.033 0" rpy="-1.57079632679 0 0" />
+		<parent link="table_top2" />
+		<child link="tabletop_ontop2" />
+		<axis xyz="0 0 0" />
+	</joint>
+
+	<link name="tabletop_corner2"/>
+	<joint name="set_tabletop_relto_corner2" type="fixed">
+	<!--	<origin xyz="0.42 0.3 0" rpy="0 0 -0.76" /> -->
+                <origin xyz="0 -0.3 0" rpy="0 0 0" />
+		<parent link="tabletop_ontop2"/>
+		<child link="tabletop_corner2"/>
+	</joint>
+
+    
+
+</root>

@@ -1,0 +1,15 @@
+material calib/Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture chessboard.png
+        filtering anistropic
+        max_anisotropy 16
+      }
+    }
+  }
+}

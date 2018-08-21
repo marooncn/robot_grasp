@@ -17,29 +17,13 @@
 	xmlns:xacro="http://ros.org/wiki/xacro" name="j2s7s300">
 
 
-  <xacro:include filename="$(find robot_grasp)/models/table/table_simple.xacro"/> 
   <xacro:include filename="$(find robot_grasp)/models/table/table.xacro"/> 
-  <xacro:include filename="$(find kinova_description)/urdf/j2s7s300.xacro"/>
+  <!--<xacro:include filename="$(find kinova_description)/urdf/j2s7s300.xacro"/>-->
 <!--  <xacro:include filename="$(find robot_grasp)/models/grasp_object/object.xacro"/>   -->
 
   <gazebo reference="arm_stand">
     <material>Gazebo/FlatBlack</material>
   </gazebo>
-
-       <link name="world" />
-	<joint name="j0" type="fixed">
-		<origin xyz="0 0 0.273" rpy="0 0 0" />
-		<parent link="world" />
-		<child link="table_base" />
-		<axis xyz="0 0 0" />
-	</joint>  
-
-	<joint name="j02" type="fixed">
-		<origin xyz="0 0.85 0.273" rpy="0 0 0" />
-		<parent link="world" />
-		<child link="table_base2" />
-		<axis xyz="0 0 0" />
-	</joint>  
 
   <link name="arm_stand">
     <inertial>
@@ -66,7 +50,7 @@
 
   <joint name="j2b" type="fixed">
     <origin rpy="-1.57079632679 -3.14159265358979 0" xyz="0 -0.035 0"/>
-    <parent link="tabletop_corner2"/>
+    <parent link="tabletop_corner"/>
     <child link="arm_stand"/>
     <axis xyz="0 0 0"/>
   </joint>  
@@ -92,13 +76,13 @@
   <joint name="connect_root_and_arm_stand" type="fixed">
     <child link="root" />
     <parent link="arm_stand" />
-    <origin xyz="0 0.08 0" rpy="-1.57079632679 1.57079632679 0" />
+    <origin xyz="0 0.08 0" rpy="-1.57079632679 0.05 0" />    
   </joint> 
 
 
   <property name="robot_root" value="root" />
 
-  <xacro:j2s7s300  base_parent="${robot_root}"/> 
+  <!--<xacro:j2s7s300  base_parent="${robot_root}"/> -->
 
 
 </robot>
