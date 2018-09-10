@@ -41,7 +41,7 @@ The robot model is controlled by PID. If the model is unstable, then you can cha
 Open 'rviz' and Set Fixed Frame to camera_link，then Add-> By topic -> points -> PointCloud2 to show its pointcloud information and you can also check the rgb image.
 <img alt="rviz" src="img/rviz.png" width="800">
 5> control  <br>
-The control package can be found [here](https://github.com/alxer/JCAR-Competition).
+The control package can be found [here](https://github.com/alxer/JCAR-Competition).  <br>
 ## Reference
-[Use a Gazebo Depth Camera with ROS](http://gazebosim.org/tutorials?tut=ros_depth_camera&cat=connect_ros#View%20Depth%20Camera%20Output%20in%20RViz) <br>
+[Use a Gazebo Depth Camera with ROS](http://gazebosim.org/tutorialstut=ros_depth_camera&cat=connect_ros#View%20Depth%20Camera%20Output%20in%20RViz) <br>
 [table model file](https://github.com/JenniferBuehler/jaco-arm-pkgs/tree/master/jaco_tutorial/jaco_on_table)
