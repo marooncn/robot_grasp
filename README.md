@@ -1,7 +1,7 @@
 # robot_grasp
 robot grasp model for JCAR competition. 3D model files are built by Jianbo Zhang. 
 ## Introduction
-This package contains grasp model.
+This package contains only the simulation environment, the control code can be found [here](https://github.com/alxer/JCAR-Competition).
 
 ## Run the demo by yourself
 Tested on Ubuntu 16.04 (64 bits) and ROS version is Kinetic. <br>
@@ -40,8 +40,8 @@ The robot model is controlled by PID. If the model is unstable, then you can cha
 4> Kinect Information <br>
 Open 'rviz' and Set Fixed Frame to camera_link，then Add-> By topic -> points -> PointCloud2 to show its pointcloud information and you can also check the rgb image.
 <img alt="rviz" src="img/rviz.png" width="800">
-5> control  <br>
-The control package can be found [here](https://github.com/alxer/JCAR-Competition).  <br>
+
 ## Reference
-[Use a Gazebo Depth Camera with ROS](http://gazebosim.org/tutorialstut=ros_depth_camera&cat=connect_ros#View%20Depth%20Camera%20Output%20in%20RViz) <br>
-[table model file](https://github.com/JenniferBuehler/jaco-arm-pkgs/tree/master/jaco_tutorial/jaco_on_table)
+[Use a Gazebo Depth Camera with ROS](http://gazebosim.org/tutorials?tut=ros_depth_camera&cat=connect_ros#View%20Depth%20Camera%20Output%20in%20RViz) <br>
+[jaco_on_table](https://github.com/JenniferBuehler/jaco-arm-pkgs/tree/master/jaco_tutorial/jaco_on_table)
+
