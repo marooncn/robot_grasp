@@ -1,5 +1,7 @@
 # robot_grasp
 robot grasp model for JCAR competition. 3D model files are built by Jianbo Zhang. 
+
+![demo](https://github.com/marooncn/robot_grasp/blob/master/img/ezgif.com-optimize%20(2).gif)
 ## Introduction
 This package contains only the simulation environment, the control code can be found [here](https://github.com/alxer/JCAR-Competition).
 
