@@ -25,7 +25,7 @@ Then you can insert the corresponding object under Gazebo 'Insert' toolbar, or i
 ~~~
 rosrun robot_grasp load_object.launch
 ~~~
-![](https://github.com/marooncn/robot_grasp/blob/v1/img/model.png)
+![](https://github.com/marooncn/robot_grasp/blob/master/img/model.png)
 ## Reference
 [Use a Gazebo Depth Camera with ROS](http://gazebosim.org/tutorials?tut=ros_depth_camera&cat=connect_ros#View%20Depth%20Camera%20Output%20in%20RViz) <br>
 [table model file](https://github.com/JenniferBuehler/jaco-arm-pkgs/tree/master/jaco_tutorial/jaco_on_table)
