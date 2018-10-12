@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <sdf version='1.4'>
-  <model name="cone">
+  <model name="threePrism">
     <static>false</static>
     <link name="link">
       <pose>0 0 0 0 0 0</pose>
@@ -15,15 +15,13 @@
       <collision name="collision">
         <geometry>
           <mesh>
-  	        <scale>0.01 0.01 0.01</scale>
-            <uri>model://cone/meshes/cone.dae</uri>
+  	        <scale>0.001 0.001 0.001</scale>
+            <uri>model://threePrism/meshes/threePrism.dae</uri>
           </mesh>
         </geometry>
         <surface>
           <contact>
             <ode>
-              <mu>100.0</mu>
-              <mu2>100.0</mu2>
               <max_vel>0.1</max_vel>
               <min_depth>0.001</min_depth>
             </ode>
@@ -33,12 +31,17 @@
       <visual name="visual">
         <geometry>
           <mesh>
-  	        <scale>0.01 0.01 0.01</scale>
-            <uri>model://cone/meshes/cone.dae</uri>
+  	        <scale>0.001 0.001 0.001</scale>
+            <uri>model://threePrism/meshes/threePrism.dae</uri>
           </mesh>
         </geometry>
         <material>
-          Yellow
+          <script>
+            <name>Gazebo/WoodTile</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <!--ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse-->
         </material> 
       </visual>  
     </link>    

@@ -1,0 +1,17 @@
+material cone/Diffuse
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture simple_box.png
+        filtering anistropic
+        max_anisotropy 16
+      }
+      
+    }
+  }
+}
+

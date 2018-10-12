@@ -38,7 +38,7 @@
           </mesh>
         </geometry>
         <material>
-          Yellow
+          Gazebo/Yellow
         </material> 
       </visual>  
     </link>    
