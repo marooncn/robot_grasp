@@ -1,6 +1,6 @@
 ## Introduction
 This package contains only the simulation environment, the control code can be found [here](https://github.com/alxer/JCAR-Competition).
-
+![](https://github.com/marooncn/robot_grasp/blob/master/img/ezgif.com-optimize%20(2).gif)
 ## Run the demo by yourself
 Tested on Ubuntu 16.04 (64 bits) and ROS version is Kinetic. <br>
 Dependence: [kinova-ros](https://github.com/Kinovarobotics/kinova-ros) <br>
