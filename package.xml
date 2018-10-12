@@ -4,23 +4,17 @@
   <version>0.0.0</version>
   <description>The robot_grasp package</description>
 
-  <maintainer email="harsh@electricmovement.com">harsh</maintainer>
-  <maintainer email="brandon@electricmovement.com">Brandon Kinman</maintainer>
+  <maintainer email="xkxhyslxh@163.com">xkx</maintainer>
 
   <license>TODO</license>
 
-
-  <author email="harsh@electricmovement.com">Harsh Pandya</author>
-  <author email="brandon@electricmovement.com">Brandon Kinman</author>
+  <author email="xkxhyslxh@163.com">xkx</author>
 
 
   <buildtool_depend>catkin</buildtool_depend>
 
   <build_depend>dynamic_reconfigure</build_depend>
   <build_depend>message_generation</build_depend>
-  <build_depend>pcl_conversions</build_depend>
-  <build_depend>pcl_ros</build_depend>
-  <build_depend>roslint</build_depend>
   <build_depend>sensor_msgs</build_depend>
 
   <run_depend>controller_manager</run_depend>
@@ -33,12 +27,9 @@
   <run_depend>joint_state_controller</run_depend>
   <run_depend>joint_state_publisher</run_depend>
   <run_depend>message_runtime</run_depend>
-  <run_depend>pcl_conversions</run_depend>
-  <run_depend>pcl_ros</run_depend>
   <run_depend>robot_state_publisher</run_depend>
   <run_depend>sensor_msgs</run_depend>
   <run_depend>xacro</run_depend>
-
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

@@ -1,0 +1,3 @@
+real_detected_obj obj_param
+---
+float32[] tranformed_coordinate

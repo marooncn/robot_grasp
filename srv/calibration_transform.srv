@@ -1,0 +1,3 @@
+real_detected_obj obj_real_detected_in_cam
+---
+float32[] obj_real_detected_in_base
