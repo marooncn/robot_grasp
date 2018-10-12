@@ -3,9 +3,9 @@
     physical part. branch v1 and v2 is the simulation environment I build. Thank Jianbo Zhang to build 
     3D model files. This part includes classification and cooridinate transform code.
 ## [V1](https://github.com/marooncn/robot_grasp/tree/v1)
-<img alt="" src="https://github.com/marooncn/robot_grasp/blob/master/img/model.png" width="600">
+<img alt="" src="https://github.com/marooncn/robot_grasp/blob/master/img/model.png" width="600"> <br>
 ## [V2](https://github.com/marooncn/robot_grasp/tree/v2)
-<img alt="" src="https://github.com/marooncn/robot_grasp/blob/master/img/simulation.jpg" width="600">
+<img alt="" src="https://github.com/marooncn/robot_grasp/blob/master/img/simulation.jpg" width="600"> <br>
 ## Physical part
 raw image from kinect
 ![raw image from kinect](https://github.com/marooncn/robot_grasp/blob/master/img/1.png)
