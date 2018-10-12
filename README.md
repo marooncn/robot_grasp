@@ -1,5 +1,5 @@
 # robot_grasp
-    This package saves somed code of JCAR Compedtition. The competition includes simulation part and 
+    This package saves some code of JCAR Compedtition. The competition includes simulation part and 
     physical part. branch v1 and v2 is the simulation environment I build. Thank Jianbo Zhang to build 
     3D model files. This part includes classification and cooridinate transform code.
 ## [V1](https://github.com/marooncn/robot_grasp/tree/v1)
