@@ -1,0 +1,35 @@
+1. Launching Gazebo with ros_control
+1.1> launch a trajectory position controller(this is how moveIt! commands the robot)
+roslaunch kinova_gazebo robot_launch.launch kinova_robotType:=j2s7s300
+1.2> control the joint by joint:
+roslaunch kinova_gazebo robot_launch.launch kinova_robotType:=j2s7s300 use_trajectory_controller:=false
+2. Moving the robot
+2.1> using the trajectory controller:
+rosrun kinova_control move_robot.py j2s7s300
+2.2> joint by joint control through rqt:
+roslaunch kinova_control kinova_rqt.launch kinova_robotType:=j2s7s300
+3. Interface with MoveIt!
+3.1> launch moveIt and RViz:
+roslaunch j2s7s300_moveit_config j2s7s300_virtual_robot_demo.launch
+3.2> run the pick and place demo node:
+rosrun kinova_arm_moveit_demo pick_place 
+ 
+加载机械臂模型：
+roslaunch robot_grasp load_model.launch
+(模型加载进去后如果抖动非常大，有可能是机械臂controller没有加载进来，输入:
+rqt
+然后选择：Plugins -> Configuration -> Dynamic Reconfigure，然后选择j2s7s300的抖动关节，调节对应P、I、D参数（如果动态参数里没有j2s7s300那就是机械臂controller没有加载进来）。一般第二个关节joint2的抖动较大，调节P=2000~4000, I=0, d=120。 ）
+然后用磁铁将kinect和kinect_support连接起来
+将待抓取的模型复制到gazebo模型根文件，这样可以在gazebo中通过Insert插入模型：
+cp -r ~/catkin_ws/src/robot_grasp/models/grasp_object/* ~/.gazebo/models/
+通过launch文件加载抓取物体模型(建议先暂停仿真，模型加载完成后打开仿真）：
+roslaunch robot_grasp load_object.launch
+查看点云：
+rosrun rviz rviz
+打开rviz后，Fixed Frame设为camera_link，Add-> By topic -> points -> PointCloud2
+用rqt进行 joint by joint控制：
+roslaunch kinova_control kinova_rqt.launch kinova_robotType:=j2s7s300
+手抓完全闭合：
+rosrun kinova_demo fingers_action_client.py j2s7s300 percent -- 100 100 100
+
+
