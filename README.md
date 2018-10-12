@@ -8,11 +8,11 @@
 <img alt="" src="https://github.com/marooncn/robot_grasp/blob/master/img/simulation.jpg" width="600"> <br>
 ## Physical part
 raw image from kinect
-![raw image from kinect](https://github.com/marooncn/robot_grasp/blob/master/img/1.png)
+<img alt="" src="https://github.com/marooncn/robot_grasp/blob/master/img/1.png" width="600"> <br>
 grayscale
-![gray image](https://github.com/marooncn/robot_grasp/blob/master/img/2.png)
+<img alt="" src="https://github.com/marooncn/robot_grasp/blob/master/img/2.png" width="600"> <br>
 classification with decision tree <br>
-![classfication](https://github.com/marooncn/robot_grasp/blob/master/img/Image.png)
+<img alt="" src="https://github.com/marooncn/robot_grasp/blob/master/img/Image.png" width="600"> <br>
 then transfrom the goal point in the captured image into space point in the robot base cooriedinator. <br>
 python version: ![transform.py](https://github.com/marooncn/robot_grasp/blob/master/scripts/transform.py) <br>
 C++ version: ![transform.cpp](https://github.com/marooncn/robot_grasp/blob/master/src/transform.cpp)
