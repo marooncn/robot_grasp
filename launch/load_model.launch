@@ -24,11 +24,9 @@
   <param name="robot_description"
     command="$(find xacro)/xacro --inorder '$(find robot_grasp)/models/kinova/$(arg kinova_robotType)_withBase.xacro'" />
 
-
   <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-    args="-urdf -model object_on_table -param robot_description"/> 
-
+    args="-urdf -model robot_on_table -param robot_description"/> 
 
   <node name="spawn_kinect" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_grasp)/models/kinect/model.sdf -sdf -model kinect -x 0.1 -y -0.55 -z 0.86" respawn="false" output="screen" />   
 
@@ -44,4 +42,6 @@
     <arg name="kinova_robotType" value="$(arg kinova_robotName)"/>
   </include>  -->
   
+
 </launch>
+

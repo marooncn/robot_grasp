@@ -1,5 +1,4 @@
-<?xml version="1.0"?>
-<!-- j2s7s300 refers to jaco v2 7DOF spherical 3fingers -->
+<?xml version="1.0" encoding="UTF-8"?>
 <root xmlns:xacro="http://ros.org/wiki/xacro">
 	<xacro:include filename="$(find robot_grasp)/models/table/table_properties.xacro" />
 	<gazebo reference="table_base">
@@ -86,7 +85,13 @@
 		</collision>
 	</link>
 <!-- Added   -->
-
+       <link name="world" />
+	<joint name="j0" type="fixed">
+		<origin xyz="0 0 0.273" rpy="0 0 0" />
+		<parent link="world" />
+		<child link="table_base" />
+		<axis xyz="0 0 0" />
+	</joint>  
 	<joint name="j1" type="fixed">
 		<origin xyz="0.0185115091791201 -0.175991980646074 0.397575968372377" rpy="1.5707963267949 0 0" />
 		<parent link="table_base" />
@@ -114,16 +119,10 @@
 
         <!-- Grasp Objects -->
 	<gazebo reference="basket">
-          <mu1>100.0</mu1>
-          <mu2>100.0</mu2>
-          <minDepth>0.01</minDepth>
-          <material>Gazebo/Green</material>
+		<material>Gazebo/Green</material>
 	</gazebo>
 	<gazebo reference="basket2">
-          <mu1>100.0</mu1>
-          <mu2>100.0</mu2>
-          <minDepth>0.01</minDepth>
-          <material>Gazebo/Blue</material>
+		<material>Gazebo/Blue</material>
 	</gazebo>
 	<gazebo reference="kinect_support">
 		<material>Gazebo/Black</material>
@@ -138,13 +137,13 @@
 		<visual>
 			<origin xyz="0 0 -0.1" rpy="0 0 0" />
 			<geometry>
-                                <mesh scale="0.0013 0.0013 0.0013" filename="$(find robot_grasp)/models/grasp_object/basket.dae" />
+				<mesh scale="0.001 0.001 0.001" filename="$(find robot_grasp)/models/grasp_object/basket.dae" />
 			</geometry>
 		</visual>
 		<collision>
 			<origin xyz="0 0 -0.1" rpy="0 0 0" />
 			<geometry>
-                                <mesh scale="0.0013 0.0013 0.0013" filename="$(find robot_grasp)/models/grasp_object/basket.dae" />
+				<mesh scale="0.001 0.001 0.001" filename="$(find robot_grasp)/models/grasp_object/basket.dae" />
 			</geometry>
 		</collision>
 	</link>
@@ -158,13 +157,13 @@
 		<visual>
 			<origin xyz="0 0 -0.1" rpy="0 0 0" />
 			<geometry>
-                                <mesh scale="0.001 0.001 0.001" filename="$(find robot_grasp)/models/grasp_object/basket.dae" />
+				<mesh scale="0.001 0.001 0.001" filename="$(find robot_grasp)/models/grasp_object/basket.dae" />
 			</geometry>
 		</visual>
 		<collision>
 			<origin xyz="0 0 -0.1" rpy="0 0 0" />
 			<geometry>
-                                <mesh scale="0.0008 0.0008 0.0008" filename="$(find robot_grasp)/models/grasp_object/basket.dae" />
+				<mesh scale="0.001 0.001 0.001" filename="$(find robot_grasp)/models/grasp_object/basket.dae" />
 			</geometry>
 		</collision>
 	</link>
@@ -184,122 +183,33 @@
 		<collision>
 			<origin xyz="0 0 0" rpy="0 0 0" />
 			<geometry>
-				<mesh scale="0.001 0.001 0.001" filename="$(find robot_grasp)/models/table/meshes/kinect_support.dae" />
+				<mesh scale="0.001 0.001 0.001" filename="$(find robot_grasp)/models/grasp_object/meshes/kinect_support.dae" />
 			</geometry>
 		</collision>
 	</link>
 
 
 	<joint name="table_basket" type="fixed">
-                <origin xyz="0.25 0.065 0.1" rpy="0 0 0" />  <!-- relative to world coordinator: y z x 0.25 0.06 0.1-->
+		<origin xyz="0.25 0.06 0.15" rpy="0 0 0" />  <!-- relative to world coordinator: y z x -->
 		<parent link="table_top" />
 		<child link="basket" />
 		<axis xyz="0 0 0" />
 	</joint>
 
 	<joint name="table_basket2" type="fixed">
-                <origin xyz="-0.25 0.06 0.1" rpy="0 0 0" />
+		<origin xyz="-0.2 0.06 0.15" rpy="0 0 0" />  
 		<parent link="table_top" />
 		<child link="basket2" />
 		<axis xyz="0 0 0" />
 	</joint>
 
 	<joint name="table_kinect_support" type="fixed">
-                <origin xyz="0.1 0.19 0.25" rpy="0 -1.5707963267949 0" />  <!-- relative to world coordinator: x z -y -->
+		<origin xyz="0.1 0.19 0.3" rpy="0 -1.5707963267949 0" />  <!-- relative to world coordinator: x z -y -->
 		<parent link="table_top" /> 
 		<child link="kinect_support" />
 		<axis xyz="0 0 0" />
 	</joint>
-    <link name="camera_link">
-            <collision>
-              <origin xyz="-0.016 0 0" rpy="0 0 0"/>
-              <geometry>
-                <box size="0.036 0.18 0.04"/>
-              </geometry>
-            </collision>
-            <visual>
-              <origin xyz="0 0 0" rpy="0 0 0"/>
-              <geometry>
-                <mesh filename="package://robot_grasp/models/kinect/meshes/kinect.dae"/>
-              </geometry>
-            </visual>
-            <inertial>
-              <mass value="1.0" />
-              <origin xyz="0 0 0" rpy="0 0 0"/>
-              <inertia ixx="5.8083e-4" ixy="0" ixz="0" iyy="3.0833e-5" iyz="0" izz="5.9083e-4" />
-            </inertial>
-         </link>
 
-        <joint name="camera_joint" type="fixed">
-            <origin xyz="-0.25 0.48 0" rpy="1.5707963267949 0 -1.5707963267949" /><!--"-0.278 0.41 0" -->
-            <parent link="kinect_support" />
-            <child link="camera_link" />
-            <axis xyz="0 1 0"/>
-        </joint>
-
-        <link name="camera_rgb_frame" />
-          <joint name="camera_rgb_joint" type="fixed">
-            <origin rpy="0 0 0" xyz="0 0.022 0" />
-            <parent link="camera_link" />
-            <child link="camera_rgb_frame" />
-          </joint>
-          <link name="camera_rgb_optical_frame" />
-          <joint name="camera_rgb_optical_joint" type="fixed">
-            <origin rpy="-1.57079632679 0 -1.57079632679" xyz="0 0 0" />
-            <parent link="camera_rgb_frame" />
-            <child link="camera_rgb_optical_frame" />
-          </joint>
-          <link name="camera_depth_frame" />
-          <joint name="camera_depth_joint" type="fixed">
-            <origin rpy="0 0 0" xyz="0 0.049 0" />
-            <parent link="camera_link" />
-            <child link="camera_depth_frame" />
-          </joint>
-          <link name="camera_depth_optical_frame" />
-          <joint name="camera_depth_optical_joint" type="fixed">
-            <origin rpy="-1.57079632679 0 -1.57079632679" xyz="0 0 0" />
-            <parent link="camera_depth_frame" />
-            <child link="camera_depth_optical_frame" />
-          </joint>
-
-        <gazebo reference="camera_rgb_frame">
-            <sensor type="depth" name="camera">
-              <always_on>true</always_on>
-              <visualize>false</visualize>
-              <update_rate>15.0</update_rate>
-              <camera name="front">
-                <horizontal_fov>1.047197</horizontal_fov>
-                <image>
-                  <format>B8G8R8</format>
-                  <width>1920</width>
-                  <height>1080</height>
-                </image>
-                <clip>
-                  <near>0.01</near>
-                  <far>9</far>
-                </clip>
-              </camera>
-              <plugin name="camera_controller" filename="libgazebo_ros_openni_kinect.so">
-                <baseline>0.1</baseline>
-                <alwaysOn>true</alwaysOn>
-                <updateRate>15.0</updateRate>
-                <cameraName>camera</cameraName>
-                <imageTopicName>/camera/rgb/image_raw</imageTopicName>
-                <cameraInfoTopicName>/camera/rgb/camera_info</cameraInfoTopicName>
-                <depthImageTopicName>/camera/depth_registered/image_raw</depthImageTopicName>
-                <depthImageCameraInfoTopicName>/camera/depth_registered/camera_info</depthImageCameraInfoTopicName>
-                <pointCloudTopicName>/camera/depth_registered/points</pointCloudTopicName>
-                <frameName>camera_rgb_optical_frame</frameName>
-                <pointCloudCutoff>0.35</pointCloudCutoff>
-                <pointCloudCutoffMax>4.5</pointCloudCutoffMax>
-                <CxPrime>0</CxPrime>
-                <Cx>900</Cx>
-                <Cy>540</Cy>
-                <focalLength>1.0</focalLength>
-                <hackBaseline>0</hackBaseline>
-              </plugin>
-            </sensor>
-          </gazebo>
 
  <!--       <gazebo reference="cubic">
 	        <material>Gazebo/Yellow</material>

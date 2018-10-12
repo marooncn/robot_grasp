@@ -21,45 +21,7 @@
           </mesh>
         </geometry>
       </visual>
-      <!--RGBD camera -->
-         <sensor type="depth" name="camera">
-           <always_on>true</always_on>
-           <visualize>false</visualize>
-           <update_rate>15.0</update_rate>
-           <camera name="front">
-             <horizontal_fov>1.047197</horizontal_fov>
-             <image>
-               <!-- openni_kinect plugin works only with BGR8 -->
-               <format>B8G8R8</format>
-               <width>640</width>
-               <height>480</height>
-             </image>
-             <clip>
-               <near>0.01</near>
-               <far>9</far>
-             </clip>
-           </camera>
-           <plugin name="camera_controller" filename="libgazebo_ros_openni_kinect.so">
-             <baseline>0.1</baseline>
-             <alwaysOn>true</alwaysOn>
-             <updateRate>15.0</updateRate>
-             <cameraName>camera</cameraName>
-             <imageTopicName>/camera/rgb/image_raw</imageTopicName>
-             <cameraInfoTopicName>/camera/rgb/camera_info</cameraInfoTopicName>
-             <depthImageTopicName>/camera/depth_registered/image_raw</depthImageTopicName>
-             <depthImageCameraInfoTopicName>/camera/depth_registered/camera_info</depthImageCameraInfoTopicName>
-             <pointCloudTopicName>/camera/depth_registered/points</pointCloudTopicName>
-             <frameName>camera_rgb_optical_frame</frameName>
-             <pointCloudCutoff>0.35</pointCloudCutoff>
-             <pointCloudCutoffMax>4.5</pointCloudCutoffMax>
-             <CxPrime>0</CxPrime>
-             <Cx>0</Cx>
-             <Cy>0</Cy>
-             <focalLength>1060</focalLength>
-             <hackBaseline>0</hackBaseline>
-           </plugin>
-         </sensor>
-      <!--<sensor name="camera" type="depth">
+      <sensor name="camera" type="depth">
         <update_rate>20</update_rate>
         <camera>
           <horizontal_fov>1.047198</horizontal_fov>
@@ -76,8 +38,15 @@
         <plugin name="camera_plugin" filename="libgazebo_ros_openni_kinect.so">
           <baseline>0.2</baseline>
           <alwaysOn>true</alwaysOn>
+          <!-- Keep this zero, update_rate in the parent <sensor> tag
+            will control the frame rate. -->
           <updateRate>0.0</updateRate>
           <cameraName>camera_ir</cameraName>
+         <!-- <imageTopicName>/camera/rgb/image_rect_color</imageTopicName>
+          <cameraInfoTopicName>/camera/depth/camera_info</cameraInfoTopicName>
+          <depthImageTopicName>/camera/depth_registered/image_raw</depthImageTopicName>
+          <depthImageInfoTopicName>/camera/depth_registered/camera_info</depthImageInfoTopicName>
+          <pointCloudTopicName>/camera/depth_registered/points</pointCloudTopicName>-->
           <cameraName>camera</cameraName>
           <imageTopicName>/camera/rgb/image_rect_color</imageTopicName>
           <cameraInfoTopicName>/camera/rgb/camera_info</cameraInfoTopicName>
@@ -97,7 +66,7 @@
           <focalLength>1043.362</focalLength>
           <hackBaseline>0</hackBaseline>
         </plugin>
-      </sensor>-->
+      </sensor>
     </link> 
   </model>
 </sdf>

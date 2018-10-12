@@ -5,14 +5,4 @@
   <xacro:property name="t_thickness" value="0.03"/>
   <xacro:property name="rim_height" value="0.015"/>
   <xacro:property name="rim_thickness" value="0.005"/>
-  <!--Define constants-->
-    <xacro:property name="PI" value="3.14159"/>
-    <xacro:property name="mass1" value="10" />
-    <xacro:property name="mass2" value="1" />
-    <xacro:property name="width1" value="0.1" />
-    <xacro:property name="width2" value="0.1" />
-    <xacro:property name="length0" value="0.1" />
-    <xacro:property name="length1" value="1.5" />
-    <xacro:property name="length2" value="0.1" />
-    <xacro:property name="mass_camera" value="0.2" />
 </root>

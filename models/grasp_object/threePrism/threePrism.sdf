@@ -15,7 +15,7 @@
       <collision name="collision">
         <geometry>
           <mesh>
-  	        <scale>0.001 0.001 0.001</scale>
+  	        <scale>0.01 0.01 0.01</scale>
             <uri>model://threePrism/meshes/threePrism.dae</uri>
           </mesh>
         </geometry>
@@ -31,7 +31,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-  	        <scale>0.001 0.001 0.001</scale>
+  	        <scale>0.01 0.01 0.01</scale>
             <uri>model://threePrism/meshes/threePrism.dae</uri>
           </mesh>
         </geometry>
