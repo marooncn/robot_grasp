@@ -6,7 +6,7 @@
 <img alt="" src="https://github.com/marooncn/robot_grasp/blob/master/img/model.png" width="600"> <br>
 ## [V2](https://github.com/marooncn/robot_grasp/tree/v2)
 <img alt="" src="https://github.com/marooncn/robot_grasp/blob/master/img/simulation.jpg" width="600"> <br>
-We improve the [official]((https://github.com/Kinovarobotics/kinova-ros) kinova model, [here](https://github.com/Kinovarobotics/kinova-ros/issues/157) are the details.
+We improve the [official](https://github.com/Kinovarobotics/kinova-ros) kinova model, [here](https://github.com/Kinovarobotics/kinova-ros/issues/157) are the details.
 ## Physical part
 ### environment
 <img alt="" src="https://github.com/marooncn/robot_grasp/blob/master/img/physical.jpg" width="600"> <br>
