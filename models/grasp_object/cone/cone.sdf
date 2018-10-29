@@ -1,6 +1,7 @@
 <?xml version='1.0'?>
 <sdf version='1.4'>
   <model name="cone">
+
     <static>false</static>
     <link name="link">
       <pose>0 0 0 0 0 0</pose>
@@ -22,8 +23,6 @@
         <surface>
           <contact>
             <ode>
-              <mu>100.0</mu>
-              <mu2>100.0</mu2>
               <max_vel>0.1</max_vel>
               <min_depth>0.001</min_depth>
             </ode>
@@ -38,7 +37,12 @@
           </mesh>
         </geometry>
         <material>
-          Yellow
+          <script>
+            <name>Gazebo/WoodTile</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <!--ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse-->
         </material> 
       </visual>  
     </link>    

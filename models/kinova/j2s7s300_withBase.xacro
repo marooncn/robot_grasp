@@ -92,7 +92,7 @@
   <joint name="connect_root_and_arm_stand" type="fixed">
     <child link="root" />
     <parent link="arm_stand" />
-    <origin xyz="0 0.08 0" rpy="-1.57079632679 1.57079632679 0" />
+    <origin xyz="0 0.08 0" rpy="-1.57079632679 0.05 0" />    
   </joint> 
 
 
