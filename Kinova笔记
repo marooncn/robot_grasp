@@ -1,0 +1,35 @@
+1. Launching Gazebo with ros_control
+1.1> launch a trajectory position controller(this is how moveIt! commands the robot)
+roslaunch kinova_gazebo robot_launch.launch kinova_robotType:=j2s7s300
+1.2> control the joint by joint:
+roslaunch kinova_gazebo robot_launch.launch kinova_robotType:=j2s7s300 use_trajectory_controller:=false
+2. Moving the robot
+2.1> using the trajectory controller:
+rosrun kinova_control move_robot.py j2s7s300
+2.2> joint by joint control through rqt:
+roslaunch kinova_control kinova_rqt.launch kinova_robotType:=j2s7s300
+3. Interface with MoveIt!
+3.1> launch moveIt and RViz:
+roslaunch j2s7s300_moveit_config j2s7s300_virtual_robot_demo.launch
+3.2> run the pick and place demo node:
+rosrun kinova_arm_moveit_demo pick_place 
+ 
+加载机械臂模型：
+roslaunch robot_grasp load_model.launch
+然后用磁铁将kinect和kinect_support连接起来
+加载抓取物体模型(建议先暂停仿真，模型加载完成后打开仿真）：
+roslaunch robot_grasp load_object.launch
+查看点云：
+rosrun rviz rviz
+打开rviz后，Fixed Frame设为camera_link，Add-> By topic -> points -> PointCloud2
+用rqt进行 joint by joint控制：
+roslaunch kinova_control kinova_rqt.launch kinova_robotType:=j2s7s300
+手抓完全闭合(实物）：
+rosrun kinova_demo fingers_action_client.py j2s7s300 percent -- 100 100 100
+
+
+实物抓取：
+1. 安装Kinect驱动：
+libfreenect2：https://github.com/OpenKinect/libfreenect2
+iai_kinect2：https://github.com/code-iai/iai_kinect2
+
